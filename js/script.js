@@ -4,21 +4,24 @@ const workTime = 25;
 const breakTime = 5;
 
 let chronometer = document.getElementById("chronometer");
+
+let startButton = document.getElementById("start");
+
 let workArea = document.getElementById("work");
 let breakArea = document.getElementById("break");
 
 function handleCyclesDisplay(){ //change work and break areas display depending on the timer status
     if(running){
-        workArea.classList.toggle("activestyle");
-        breakArea.classList.toggle("cycles");
+        workArea.classList.add("activestyle");
+        breakArea.classList.remove("activestyle");
 
     } else{
-        breakArea.classList.toggle("activestyle");
-        workArea.classList.toggle("cycles");
+        breakArea.classList.add("activestyle");
+        workArea.classList.remove("activestyle");
     }
 }
 
-chronometer.addEventListener("click", function(){ //the listener on the start button allows to start the timer if clicked
+startButton.addEventListener("click", function(){ //the listener on the start button allows to start the timer if clicked
     if(!running){
         startTimer();
     } else{

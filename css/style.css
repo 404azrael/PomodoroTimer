@@ -4,12 +4,26 @@ h1 {
     margin: 0 auto;
 }
 
-/*main {
+
+.display{
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}*/
+    font-size: 2em;
+    text-align: center;
+    background-color: red; 
+    margin: 5%;
+    width: 500px
+}
+
+#work{
+    text-align: left;
+}
+
+#break{
+    text-align: right;
+}
+
+
+
 
 .activestyle{
     color: gold;
@@ -19,17 +33,17 @@ h1 {
 }
 
 main{
-display: flex;
+    /*
+display: flexbox;
 flex-wrap: wrap;
+*/
+text-align: center;
 height: 400px;
 align-content: space-between;
 }
 
 .cycles{
-    color: lightgray;
-    font-size: 2em;
-    text-align: center;
-    background-color: red; 
+
 }
 
 #chronometer{
