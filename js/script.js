@@ -7,7 +7,16 @@ let chronometer = document.getElementById("chronometer");
 let workArea = document.getElementById("work");
 let breakArea = document.getElementById("break");
 
+function handleCyclesDisplay(){ //change work and break areas display depending on the timer status
+    if(running){
+        workArea.classList.toggle("activestyle");
+        breakArea.classList.toggle("cycles");
 
+    } else{
+        breakArea.classList.toggle("activestyle");
+        workArea.classList.toggle("cycles");
+    }
+}
 
 chronometer.addEventListener("click", function(){ //the listener on the start button allows to start the timer if clicked
     if(!running){
@@ -39,4 +48,4 @@ function startTimer(){
 
         chronometer.textContent = minutes + ":" + seconds;
     }, 1000);
-}
+} 

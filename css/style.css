@@ -11,6 +11,12 @@ h1 {
     height: 100vh;
 }*/
 
+.activestyle{
+    color: gold;
+    font-size: 2em;
+    text-align: center;
+    background-color: red;  
+}
 
 main{
 display: flex;
@@ -19,11 +25,11 @@ height: 400px;
 align-content: space-between;
 }
 
-#work, #break{
-color: gold;
-font-size: 2em;
-text-align: center;
-background-color: red;
+.cycles{
+    color: lightgray;
+    font-size: 2em;
+    text-align: center;
+    background-color: red; 
 }
 
 #chronometer{
