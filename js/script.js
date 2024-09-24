@@ -49,6 +49,6 @@ function startTimer(){
             chronometer.textContent = breakTime;
         }
 
-        chronometer.textContent = minutes + ":" + seconds;
+        chronometer.textContent = `${minutes}:${seconds < 10 ? "0" + seconds : seconds}`; //display the time in the chronometer 
     }, 1000);
 } 
