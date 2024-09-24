@@ -1,39 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pomodoro method timer</title>
+    <link rel="icon" type="image/x-icon" href="/img/tomato.png">
     <script defer src="js/script.js"></script>
     <script src="https://kit.fontawesome.com/bf666a6394.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
-    <h1>Pomodoro method timer</h1>
+    <header>
+        <h1>Pomodoro method timer</h1>
+    </header>
 
     <main>
+        <div class="display">
+            <p id="work">Work</p>
+            <p id="break">Break</p>
+        </div>
 
-
-        <section class ="display">
-            <p id="work">Work</button>
-            <p id="break">Break</button>
-        </section>
-
-        <div class = "time">
+        <div class="time">
             <button id="chronometer">25 : 00</button>
         </div>
 
-        <div class = "buttons">
+        <div class="buttons">
             <button id="start"><em class="fa-solid fa-play"></em></button>
             <a href="settings.html">
                 <em class="fa-solid fa-gear"></em>
             </a>
         </div>
-
+        
     </main>
+    <div id="layout">
+        <form action="">
+            <input type="number" id="work-time" name="work-time" placeholder="Work time (minutes)">
+            <input type="number" id="break-time" name="break-time" placeholder="Break time (minutes)">
+        </form>
+    </div>
 
-    
-    
+    <footer>&copy; Copyright 2024 404azrael</footer>
+
+
+
 </body>
+
 </html>
