@@ -71,10 +71,17 @@ align-content: space-between;
 
 }
 
+.time{
+    display:flex;
+}
+
 #chronometer{
     border-radius: 100%;
     font-size: 5em;
     padding: 50px;
+    background-color: white;
+    aspect-ratio: 1/1;
+    width:100px;
 }
 
 
