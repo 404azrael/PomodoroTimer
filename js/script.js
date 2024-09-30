@@ -1,15 +1,18 @@
 
-let working = true;
-const workTime = 0.1;
-const breakTime = 2;
-let time = workTime * 60;
+let working = true; //indicates whether the timer is in work mode or break mode
+const workTime = 0.1; 
+const breakTime = 0.2;
+let time = workTime * 60; //time in seconds
+let interval; //interval to update the timer
+
+let restart = false; //indicates whether the start button will be used to start the timer or to restart it
 
 let chronometer = document.getElementById("chronometer");
 let startButton = document.getElementById("start");
 let workArea = document.getElementById("work");
 let breakArea = document.getElementById("break");
 
-let interval;
+
 
 function handleCyclesDisplay(){ //change work and break areas display depending on the timer status
     if(working){
@@ -22,17 +25,20 @@ function handleCyclesDisplay(){ //change work and break areas display depending 
     }
 }
 
-startButton.addEventListener("click", function(){ //the listener on the start button allows to start the timer if clicked
-    // faire un booleen pour savoir si c'est le bouton demarrer ou le bouton restart
-    if(working){
+startButton.addEventListener("click", function(){ //the listener on the start button allows to start the timer if clicked once and to restart it if clicked again
+    if(!restart){
         startTimer();
     } else{
-        working = false;
-        interval = clearInterval(timer);
+        clearInterval(interval);
+        startTimer();
     }
 });
 
 function startTimer(){
+
+    time = workTime ? workTime * 60 - 1 : breakTime * 60 - 1;
+    interval = setInterval( timeEvolution, 1000);
+    restart = true;
     handleCyclesDisplay(); //change the display of the work and break areas
     /*switch(working){
         case true:
@@ -42,45 +48,29 @@ function startTimer(){
             chronometer.textContent = breakTime;
             break;
     }*/
-    interval = setInterval( timeEvolution, 1000);
+    //interval = setInterval( timeEvolution, 1000);
 } 
 
 function timeEvolution(){
-    let minutes = parseInt(time / 60, 10); //split the chronometer text content to get the minutes and seconds
+    handleCyclesDisplay();
+    let minutes = parseInt(time / 60, 10); 
     let seconds = parseInt(time % 60, 10);
 
     if(minutes < 10){
         minutes = "0" + minutes;
-    }if(seconds < 10){
+    }
+    if(seconds < 10){
         seconds = "0" + seconds;
     }
     chronometer.innerText = `${minutes}:${seconds}`;
 
     if(time <=0){
-        working = false;
-        time = breakTime * 60;
+
+        working = !working;
+        time = working ? workTime * 60 : breakTime * 60 ;
+        /*working = false;
+        time = breakTime * 60;*/
     }else{
         time--;
     }
-
-
-    /*if(seconds > 0){
-        seconds--;
-    }else if(minutes > 0){ 
-        minutes--;
-        seconds = 59;
-    }else{
-        clearInterval(timer);
-        working = !working;
-        try{handleCyclesDisplay();} catch(e){console.log(e);}
-        chronometer.textContent = breakTime;
-        console.log("break");
-        minutes = parseInt(chronometer.textContent.split(":")[0]);
-        seconds = parseInt(chronometer.textContent.split(":")[1]);
-        if (isNaN(seconds)){
-            seconds = 0;
-        }
-        
-    }*/
-    //chronometer.textContent = `${minutes}:${seconds < 10 ? "0" + seconds : seconds}`; //display the time in the chronometer 
 }

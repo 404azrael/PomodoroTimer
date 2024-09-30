@@ -1,0 +1,24 @@
+    if(working){
+        startTimer();
+    } else{
+        working = false;
+        interval = clearInterval(timer);
+    }
+
+
+
+
+
+    <div id="customizeTimeModal" class="modal">
+                <div class="modalContent">
+                    <span class="close">&times;</span>
+                    <p>Modifiez les paramètres de temps du timer</p>
+                    <form id="formulary" method="POST">
+                        <label for="customizeWorkingTime">Temps de travail (en minutes) : </label>
+                        <input type="number" id="customizeWorkingTime" min="1" max="99" value="25" name="workTimeValue"><br>
+                        <label for="customizeBreakingTime">Temps de pause (en minutes) : </label>
+                        <input type="number" id="customizeBreakingTime" min="1" max="30" value="5" name="breakTimeValue"><br>
+                        <input class="apply" type="button" onclick="valueRecup()" value="Appliquer"> 
+                    </form>
+                </div>
+            </div>
