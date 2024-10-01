@@ -11,7 +11,10 @@
       crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" href="css/style.css" />
-    <link href="https://fonts.googleapis.com/css?family=Font+Family+Name&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css?family=Font+Family+Name&display=swap"
+      rel="stylesheet"
+    />
   </head>
 
   <body>
@@ -34,26 +37,45 @@
           <em id="playlogo" class="fa-solid fa-play"></em>
         </button>
         <button id="settings">
-          <em id="settings" class="fa-solid fa-gear"></em>
+          <em id="settingsEm" class="fa-solid fa-gear"></em>
         </button>
       </div>
+
+      <div id="timeSettingsModal" class="modal">
+        <div class="modalContent">
+          <span class="close">&times;</span>
+          <p>Personnalisez la durée de vos périodes de travail et de pause</p>
+          <form id="timeForm" method="POST">
+            <label for="userWorkingTime"
+              >Temps de travail (en minutes) :
+            </label>
+            <input
+              type="number"
+              id="userWorkingTime"
+              min="1"
+              max="99"
+              value="25"
+              name="workTime"
+            /><br />
+            <label for="userBreakTime">Temps de pause (en minutes) : </label>
+            <input
+              type="number"
+              id="userBreakTime"
+              min="1"
+              max="30"
+              value="5"
+              name="breakTime"
+            /><br />
+            <input
+              class="apply"
+              type="button"
+              onclick="dataRetrieve()"
+              value="Sauvegarder"
+            />
+          </form>
+        </div>
+      </div>
     </main>
-    <div id="layout">
-      <form action="">
-        <input
-          type="number"
-          id="work-time"
-          name="work-time"
-          placeholder="Work time (minutes)"
-        />
-        <input
-          type="number"
-          id="break-time"
-          name="break-time"
-          placeholder="Break time (minutes)"
-        />
-      </form>
-    </div>
 
     <footer>&copy; Copyright 2024 404azrael</footer>
   </body>

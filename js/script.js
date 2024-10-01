@@ -1,6 +1,6 @@
 let working = true; //indicates whether the timer is in work mode or break mode
-const workTime = 25;
-const breakTime = 5;
+let workTime = 25;
+let breakTime = 5;
 let time = workTime * 60; //time in seconds
 let interval; //interval to update the timer
 let restart = false; //indicates whether the start button will be used to start the timer or to restart it
@@ -47,6 +47,7 @@ function startTimer() {
         startButton.querySelector('em').classList.add('fa-play'); //switch back the restart button icon to the original play icon
         working = true;
         handleCyclesDisplay(); //reset the work and break areas display
+        workArea.classList.remove("activestyle");
     }
 }
 
@@ -68,3 +69,31 @@ function timeEvolution() {
         time--;
     }
 }
+
+
+
+function dataRetrieve(){
+    workTime = document.getElementById("timeForm").elements["workTime"].value;
+    breakTime = document.getElementById("timeForm").elements["breakTime"].value;
+    chronometer.innerText = workTime < 10 ? "0" + `${workTime}:00` : `${workTime}:00`;
+    modal.style.display = "none";
+}
+
+let button = document.getElementById("settings");
+let modal = document.getElementById("timeSettingsModal");
+let closeButton = document.getElementsByClassName("close")[0];
+
+button.onclick = function () {
+    modal.style.display = "block";
+}
+
+closeButton.onclick = function () {
+    modal.style.display = "none";
+}
+
+window.onclick = function (event) {
+    if (event.target === modal) {
+        modal.style.display = "none";
+    }
+}
+

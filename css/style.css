@@ -61,6 +61,11 @@ body {
     padding: 20px;
     width: 100px;
     height: 100px;
+    color: lightgoldenrodyellow;
+}
+
+#settings {
+    font-size: 1.5em;
 }
 
 #layout {
@@ -70,12 +75,6 @@ body {
     display: none;
     justify-content: center;
     align-items: center;
-}
-
-form {
-    background: pink;
-    width: 40%;
-    height: 40vh;
 }
 
 main {
@@ -114,5 +113,89 @@ main {
 footer {
     text-align: center;
     margin: 0 auto;
+    color: lightgoldenrodyellow;
 
+}
+
+#timeForm {
+    background-color: lightgoldenrodyellow;
+    font-family: Eurotypo Sans, sans-serif;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modalContent {
+    background-color: #7e0a0a;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 40%;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.modalContent p {
+    color: lightgoldenrodyellow;
+    font-family: Eurotypo Sans, sans-serif;
+    font-size: 1.2em;
+}
+
+.modalContent label {
+    color: #7e0a0a;
+    display: block;
+    margin: 10px 0 5px;
+    font-size: 1.1em;
+}
+
+
+.modalContent input[type="number"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: white;
+    color: #000;
+    font-size: 1em;
+}
+
+.modalContent input[type="button"] {
+    background-color: #7e0a0a;
+    color: lightgoldenrodyellow;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;       
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s;
+}
+
+.modalContent input[type="button"]:hover {
+    background-color: darkorange;
+}
+
+.close {
+    color: lightgoldenrodyellow;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: gold;
 }
