@@ -4,46 +4,69 @@ h1 {
     margin: 0 auto;
 }
 
+html,
+body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
 
-body{
+body {
     background-color: #c5051f;
 }
 
-.display{
-    border-radius: 30px;
+.display {
+    border-radius: 20px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     text-align: center;
-    font-size: 2em;
-    margin: 0 auto;
+    font-size: 1.5em;
+    margin: 20px auto;
     width: 25%;
+    background-color: #7e0a0a;
+    padding: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
 }
 
-#work{
+#work,
+#break {
+    color: lightgoldenrodyellow;
+    padding: 10px 20px;
+    cursor: pointer;
+    z-index: 1;
+    width: 30%;
+    text-align: center;
+}
+
+.activestyle {
+    color: gold !important;
+}
+
+#work {
     text-align: left;
 }
 
-#break{
+#break {
     text-align: right;
 }
 
-#start, #settings{
+#start,
+#settings {
     border: none;
     background: none;
-    font-size: 2em; /* Increase icon size */
-    padding: 20px; /* Add some padding */
-    width: 100px; /* Set width for the button */
-    height: 100px; /* Set height for the button */
+    font-size: 2em;
+    padding: 20px;
+    width: 100px;
+    height: 100px;
 }
-
 
 #layout {
     width: 100%;
     height: 100vh;
-    background-color: rgba(0,0,0,0.5);
-    /*display: flex;*/
+    background-color: rgba(0, 0, 0, 0.5);
     display: none;
-    justify-content:center ;
+    justify-content: center;
     align-items: center;
 }
 
@@ -53,58 +76,39 @@ form {
     height: 40vh;
 }
 
-
-
-
-.activestyle{
-    color: gold; 
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    height: 400px;
+    align-content: space-between;
+    flex: 1;
 }
 
-main{
-    /*
-display: flexbox;
-flex-wrap: wrap;
-*/
-text-align: center;
-height: 400px;
-align-content: space-between;
-}
-
-.cycles{
-
-}
-
-.time{
+.time {
     text-align: center;
     margin: 0 auto;
 }
 
-#chronometer{
+#chronometer {
     border-radius: 100%;
     font-size: 5em;
     padding: 50px;
     background-color: white;
     aspect-ratio: 1/1;
-    width:125px;
-    height:125px;
+    width: 125px;
+    height: 125px;
     text-align: center;
-    line-height: 125px; /* Center text vertically (make it the same as the height) */
-    margin: 0 auto; /* Center the circle horizontally */
-    overflow: hidden; /* Prevent text from overflowing out of the circle */
+    line-height: 125px;
+    margin: 0 auto;
+    overflow: hidden;
     display: flex;
     justify-content: center;
-    align-items: center; /* Ensure vertical centering */
+    align-items: center;
 }
 
-
-#cycles{
-
-    text-align: center;
-    margin: 0 auto;
-}
-
-
-footer{
+footer {
     text-align: center;
     margin: 0 auto;
 }
