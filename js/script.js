@@ -36,6 +36,7 @@ startButton.addEventListener("click", function(){ //the listener on the start bu
 
 function startTimer(){
 
+
     time = workTime ? workTime * 60 - 1 : breakTime * 60 - 1;
     interval = setInterval( timeEvolution, 1000);
     restart = true;
