@@ -27,9 +27,13 @@ body{
     text-align: right;
 }
 
-#start{
+#start, #settings{
     border: none;
     background: none;
+    font-size: 2em; /* Increase icon size */
+    padding: 20px; /* Add some padding */
+    width: 100px; /* Set width for the button */
+    height: 100px; /* Set height for the button */
 }
 
 
@@ -82,8 +86,14 @@ align-content: space-between;
     background-color: white;
     aspect-ratio: 1/1;
     width:125px;
+    height:125px;
     text-align: center;
-    margin: 0 auto;
+    line-height: 125px; /* Center text vertically (make it the same as the height) */
+    margin: 0 auto; /* Center the circle horizontally */
+    overflow: hidden; /* Prevent text from overflowing out of the circle */
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Ensure vertical centering */
 }
 
 
